@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/*
+ * ============================================================
+ * TAHI HOME-BASED CARE — DESIGN TOKENS
+ * ------------------------------------------------------------
+ * TEMPORARY VISUAL IDENTITY. The client has not yet supplied a
+ * final logo or brand colors. Every color/font below is a
+ * design token — replace the values here (and only here) once
+ * official brand assets are supplied. Nothing downstream should
+ * need to change.
+ * ============================================================
+ */
+
+@theme {
+  /* Primary — deep teal. Reads as clinical calm + trust. */
+  --color-primary-50: #eef6f4;
+  --color-primary-100: #d6ebe6;
+  --color-primary-200: #aed7cd;
+  --color-primary-300: #7fbeb0;
+  --color-primary-400: #4fa090;
+  --color-primary-500: #2f8575;
+  --color-primary-600: #1f6b5c;
+  --color-primary-700: #185a4e;
+  --color-primary-800: #14483f;
+  --color-primary-900: #113a34;
+  --color-primary-950: #08211d;
+
+  /* Accent — warm terracotta. Reads as human warmth + compassion. */
+  --color-accent-50: #fcf3ee;
+  --color-accent-100: #f8e3d6;
+  --color-accent-200: #f0c4a9;
+  --color-accent-300: #e7a177;
+  --color-accent-400: #dd7f4e;
+  --color-accent-500: #cc6238;
+  --color-accent-600: #b14e29;
+  --color-accent-700: #8f3e21;
+  --color-accent-800: #71331d;
+  --color-accent-900: #5c2b1b;
+
+  /* Neutral — warm stone, not clinical gray. */
+  --color-neutral-50: #faf9f7;
+  --color-neutral-100: #f3f1ed;
+  --color-neutral-200: #e6e2da;
+  --color-neutral-300: #d3cdc1;
+  --color-neutral-400: #aba398;
+  --color-neutral-500: #837b70;
+  --color-neutral-600: #635c53;
+  --color-neutral-700: #4a453e;
+  --color-neutral-800: #322f2a;
+  --color-neutral-900: #211f1b;
+  --color-neutral-950: #16140f;
+
+  /* Semantic feedback colors */
+  --color-success-500: #2f8560;
+  --color-success-600: #236b4c;
+  --color-error-500: #c0432c;
+  --color-error-600: #a03623;
+  --color-warning-500: #b8792a;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+
+  --shadow-card: 0 1px 2px rgba(22, 20, 15, 0.04), 0 4px 16px -4px rgba(22, 20, 15, 0.08);
+  --shadow-card-hover: 0 2px 4px rgba(22, 20, 15, 0.06), 0 12px 28px -6px rgba(22, 20, 15, 0.14);
+
+  --animate-fade-in: fade-in 0.5s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: theme(--color-neutral-200);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-neutral-50);
+    color: var(--color-neutral-800);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    color: var(--color-neutral-900);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  /* Visible, high-contrast focus ring everywhere — never suppressed. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary-600);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-primary-200);
+    color: var(--color-primary-950);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
