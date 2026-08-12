@@ -4,52 +4,65 @@
  * ============================================================
  * TAHI HOME-BASED CARE — DESIGN TOKENS
  * ------------------------------------------------------------
- * TEMPORARY VISUAL IDENTITY. The client has not yet supplied a
- * final logo or brand colors. Every color/font below is a
- * design token — replace the values here (and only here) once
- * official brand assets are supplied. Nothing downstream should
- * need to change.
+ * Brand colors confirmed by the client: royal blue (primary) and
+ * white, with gold and sky blue as supporting variation colors.
+ * A final logo has not been supplied yet. Every color/font below
+ * is a design token — replace the values here (and only here) if
+ * brand colors are refined further or a logo is supplied.
+ * Nothing downstream should need to change.
  * ============================================================
  */
 
 @theme {
-  /* Primary — deep teal. Reads as clinical calm + trust. */
-  --color-primary-50: #eef6f4;
-  --color-primary-100: #d6ebe6;
-  --color-primary-200: #aed7cd;
-  --color-primary-300: #7fbeb0;
-  --color-primary-400: #4fa090;
-  --color-primary-500: #2f8575;
-  --color-primary-600: #1f6b5c;
-  --color-primary-700: #185a4e;
-  --color-primary-800: #14483f;
-  --color-primary-900: #113a34;
-  --color-primary-950: #08211d;
+  /* Primary — royal blue. The client's brand color: trust, authority, calm. */
+  --color-primary-50: #eff3fe;
+  --color-primary-100: #dfe7fd;
+  --color-primary-200: #bfd0fc;
+  --color-primary-300: #96aef8;
+  --color-primary-400: #6884ef;
+  --color-primary-500: #435fe3;
+  --color-primary-600: #2c42d6;
+  --color-primary-700: #2334ac;
+  --color-primary-800: #1c2a87;
+  --color-primary-900: #172363;
+  --color-primary-950: #0e1538;
 
-  /* Accent — warm terracotta. Reads as human warmth + compassion. */
-  --color-accent-50: #fcf3ee;
-  --color-accent-100: #f8e3d6;
-  --color-accent-200: #f0c4a9;
-  --color-accent-300: #e7a177;
-  --color-accent-400: #dd7f4e;
-  --color-accent-500: #cc6238;
-  --color-accent-600: #b14e29;
-  --color-accent-700: #8f3e21;
-  --color-accent-800: #71331d;
-  --color-accent-900: #5c2b1b;
+  /* Accent — gold. Regal complement to royal blue; used sparingly for emphasis. */
+  --color-accent-50: #fbf6e9;
+  --color-accent-100: #f6ebc9;
+  --color-accent-200: #ecd68d;
+  --color-accent-300: #e0bd5c;
+  --color-accent-400: #cda13b;
+  --color-accent-500: #b7862a;
+  --color-accent-600: #966b20;
+  --color-accent-700: #77531c;
+  --color-accent-800: #5e4219;
+  --color-accent-900: #4c3617;
 
-  /* Neutral — warm stone, not clinical gray. */
-  --color-neutral-50: #faf9f7;
-  --color-neutral-100: #f3f1ed;
-  --color-neutral-200: #e6e2da;
-  --color-neutral-300: #d3cdc1;
-  --color-neutral-400: #aba398;
-  --color-neutral-500: #837b70;
-  --color-neutral-600: #635c53;
-  --color-neutral-700: #4a453e;
-  --color-neutral-800: #322f2a;
-  --color-neutral-900: #211f1b;
-  --color-neutral-950: #16140f;
+  /* Sky — lighter blue variation. Tonal companion to primary for badges/soft fills. */
+  --color-sky-50: #f1f8fe;
+  --color-sky-100: #e1f0fd;
+  --color-sky-200: #c3e2fb;
+  --color-sky-300: #97cdf7;
+  --color-sky-400: #63b0ef;
+  --color-sky-500: #3b94e0;
+  --color-sky-600: #2777c0;
+  --color-sky-700: #205f9b;
+  --color-sky-800: #1c4e7d;
+  --color-sky-900: #1a4267;
+
+  /* Neutral — cool, crisp gray-white. Reads clean and corporate, not warm/earthy. */
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f0f3f7;
+  --color-neutral-200: #e2e7ee;
+  --color-neutral-300: #cbd2dc;
+  --color-neutral-400: #9aa5b4;
+  --color-neutral-500: #707b8c;
+  --color-neutral-600: #545f72;
+  --color-neutral-700: #3d4658;
+  --color-neutral-800: #262c3a;
+  --color-neutral-900: #171b24;
+  --color-neutral-950: #0d0f15;
 
   /* Semantic feedback colors */
   --color-success-500: #2f8560;

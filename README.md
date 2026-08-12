@@ -60,7 +60,7 @@ src/
 
 ### Placeholder content
 
-The client has not yet supplied a final logo, brand colors, tagline, staff info, testimonials, service photography, email, or address. Every placeholder is marked one of two ways so it's never mistaken for a real fact:
+The client has confirmed brand colors (royal blue + white, see below) but has not yet supplied a final logo, tagline, staff info, testimonials, service photography, email, or address. Every placeholder is marked one of two ways so it's never mistaken for a real fact:
 
 - Fields with `isPlaceholder: true` in the config files (rendered with a visible "coming soon" / dashed-border notice on the page — see `PlaceholderNotice` component)
 - Images: no stock photography is used as a stand-in. Anywhere real photography is missing, `ImagePlaceholder` renders a neutral icon graphic instead.
@@ -69,7 +69,16 @@ To replace a placeholder, update the relevant field in `src/config/` and flip it
 
 ### Brand colors / logo / fonts
 
-All design tokens live in `src/index.css` under the `@theme` block — edit the `--color-primary-*`, `--color-accent-*`, `--color-neutral-*`, and `--font-*` variables there. The favicon/logo mark is inline SVG in `public/favicon.svg` and duplicated inline in `Header.tsx`/`Footer.tsx`; swap those with the client's real logo file once supplied (replace the inline `<svg>` with an `<img>`).
+Confirmed brand colors: **royal blue** (primary) and **white**, with **gold** and **sky blue** as supporting variation colors. All design tokens live in `src/index.css` under the `@theme` block:
+
+| Token | Role |
+|---|---|
+| `--color-primary-*` | Royal blue — buttons, links, active nav, headings accents |
+| `--color-accent-*` | Gold — secondary CTAs, badges, placeholder/notice highlights |
+| `--color-sky-*` | Light blue — soft badge fills, tonal backgrounds (e.g. the hero pill, image placeholders) |
+| `--color-neutral-*` | Cool gray/white — body background, text, borders |
+
+Edit the hex values there to adjust the palette further; every component reads these tokens rather than hardcoding colors. The favicon/logo mark is inline SVG in `public/favicon.svg` and duplicated inline in `Header.tsx`/`Footer.tsx`; swap those with the client's real logo file once supplied (replace the inline `<svg>` with an `<img>`).
 
 ## Connecting a real backend
 
@@ -91,6 +100,6 @@ Built to WCAG 2.2 AA where practical: semantic landmarks, visible focus rings ev
 ## Known gaps (by design, pending client input)
 
 - No live form backend (see above)
-- No confirmed logo, brand colors, tagline, or company description
+- No confirmed logo, tagline, or company description
 - No real staff bios/photos, testimonials, service photography, business email, or physical address
 - No confirmed social media accounts

@@ -17,7 +17,7 @@ export function ImagePlaceholder({ icon: Icon = ImageOff, label, className }: Im
   return (
     <div
       className={cn(
-        "flex h-full w-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-primary-50 to-neutral-100 text-primary-600",
+        "flex h-full w-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-sky-50 to-primary-100 text-primary-600",
         className,
       )}
       role="img"

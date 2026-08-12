@@ -10,7 +10,7 @@ export function Hero() {
     <section className="border-b border-neutral-200 bg-gradient-to-b from-primary-50/60 to-neutral-50">
       <Container className="grid grid-cols-1 items-center gap-10 py-14 sm:py-20 lg:grid-cols-2 lg:gap-16">
         <div>
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-100 px-3.5 py-1.5 text-sm font-medium text-primary-800">
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-sky-100 px-3.5 py-1.5 text-sm font-medium text-sky-800">
             <HeartHandshake className="h-4 w-4" aria-hidden="true" />
             Home-based healthcare, close to you
           </p>
