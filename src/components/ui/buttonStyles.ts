@@ -8,7 +8,7 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary: "bg-primary-600 text-white hover:bg-primary-700 focus-visible:outline-primary-700",
-  secondary: "bg-accent-500 text-white hover:bg-accent-600 focus-visible:outline-accent-600",
+  secondary: "bg-sky-300 text-primary-900 hover:bg-sky-200 focus-visible:outline-primary-700",
   outline:
     "border border-neutral-300 bg-white text-neutral-800 hover:border-primary-600 hover:text-primary-700 focus-visible:outline-primary-600",
   whatsapp: "bg-[#25D366] text-white hover:bg-[#1fb757] focus-visible:outline-[#1fb757]",

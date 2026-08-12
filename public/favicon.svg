@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tahi Home-Based Care logo mark">
-  <rect width="64" height="64" rx="16" fill="#2c42d6"/>
+  <rect width="64" height="64" rx="16" fill="#002ea6"/>
   <path d="M20 33.5c0-7.5 5.5-13.5 12-13.5s12 6 12 13.5c0 6-4.2 10.7-9.3 13.2a5.6 5.6 0 0 1-5.4 0C24.2 44.2 20 39.5 20 33.5Z" fill="#ffffff"/>
-  <path d="M32 26v11M26.5 31.5h11" stroke="#2c42d6" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M32 26v11M26.5 31.5h11" stroke="#002ea6" stroke-width="2.6" stroke-linecap="round"/>
 </svg>

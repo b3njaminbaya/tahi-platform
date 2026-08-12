@@ -17,7 +17,7 @@ export function PlaceholderNotice({ children, className }: PlaceholderNoticeProp
     <div
       role="note"
       className={cn(
-        "flex items-start gap-2.5 rounded-md border border-dashed border-accent-300 bg-accent-50 px-4 py-3 text-sm text-accent-800",
+        "flex items-start gap-2.5 rounded-md border border-dashed border-neutral-300 bg-neutral-100 px-4 py-3 text-sm text-neutral-700",
         className,
       )}
     >

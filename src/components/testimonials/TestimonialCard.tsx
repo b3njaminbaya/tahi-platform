@@ -9,7 +9,7 @@ interface TestimonialCardProps {
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
     <figure className="flex h-full flex-col rounded-lg border border-neutral-200 bg-white p-6 shadow-card">
-      <Quote className="h-6 w-6 text-accent-400" aria-hidden="true" />
+      <Quote className="h-6 w-6 text-sky-500" aria-hidden="true" />
       <blockquote className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-neutral-700">
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
@@ -23,7 +23,7 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
         </div>
       </figcaption>
       {testimonial.isPlaceholder ? (
-        <p className="mt-3 text-xs font-medium uppercase tracking-wide text-accent-600">Placeholder testimonial</p>
+        <p className="mt-3 text-xs font-medium uppercase tracking-wide text-neutral-500">Placeholder testimonial</p>
       ) : null}
     </figure>
   );

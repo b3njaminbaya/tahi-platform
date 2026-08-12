@@ -4,52 +4,46 @@
  * ============================================================
  * TAHI HOME-BASED CARE — DESIGN TOKENS
  * ------------------------------------------------------------
- * Brand colors confirmed by the client: royal blue (primary) and
- * white, with gold and sky blue as supporting variation colors.
- * A final logo has not been supplied yet. Every color/font below
- * is a design token — replace the values here (and only here) if
- * brand colors are refined further or a logo is supplied.
- * Nothing downstream should need to change.
+ * Brand colors sampled directly from client-supplied marketing
+ * flyers (Tahi Homecare Limited, formerly 3D Medcare):
+ *   - Deep royal blue #002EA6 — the consistent brand blue across
+ *     every flyer, used here as primary-600.
+ *   - Light periwinkle blue #B1CFF3 — the flyers' secondary tone,
+ *     used here as sky-300.
+ * The source material is two-tone (blue + white + near-black
+ * text) with no third accent hue, so this palette intentionally
+ * has no separate "accent" color — sky-* fills that role. A final
+ * logo has not been supplied yet. Every color/font below is a
+ * design token — replace the values here (and only here) if brand
+ * colors are refined further or a logo is supplied.
  * ============================================================
  */
 
 @theme {
-  /* Primary — royal blue. The client's brand color: trust, authority, calm. */
-  --color-primary-50: #eff3fe;
-  --color-primary-100: #dfe7fd;
-  --color-primary-200: #bfd0fc;
-  --color-primary-300: #96aef8;
-  --color-primary-400: #6884ef;
-  --color-primary-500: #435fe3;
-  --color-primary-600: #2c42d6;
-  --color-primary-700: #2334ac;
-  --color-primary-800: #1c2a87;
-  --color-primary-900: #172363;
-  --color-primary-950: #0e1538;
+  /* Primary — royal blue, sampled at #002EA6 from client flyers. */
+  --color-primary-50: #eef2fc;
+  --color-primary-100: #dce5f9;
+  --color-primary-200: #b9cbf3;
+  --color-primary-300: #8facea;
+  --color-primary-400: #5e86df;
+  --color-primary-500: #2c4fc3;
+  --color-primary-600: #002ea6;
+  --color-primary-700: #002488;
+  --color-primary-800: #001c6b;
+  --color-primary-900: #001548;
+  --color-primary-950: #000c2c;
 
-  /* Accent — gold. Regal complement to royal blue; used sparingly for emphasis. */
-  --color-accent-50: #fbf6e9;
-  --color-accent-100: #f6ebc9;
-  --color-accent-200: #ecd68d;
-  --color-accent-300: #e0bd5c;
-  --color-accent-400: #cda13b;
-  --color-accent-500: #b7862a;
-  --color-accent-600: #966b20;
-  --color-accent-700: #77531c;
-  --color-accent-800: #5e4219;
-  --color-accent-900: #4c3617;
-
-  /* Sky — lighter blue variation. Tonal companion to primary for badges/soft fills. */
-  --color-sky-50: #f1f8fe;
-  --color-sky-100: #e1f0fd;
-  --color-sky-200: #c3e2fb;
-  --color-sky-300: #97cdf7;
-  --color-sky-400: #63b0ef;
-  --color-sky-500: #3b94e0;
-  --color-sky-600: #2777c0;
-  --color-sky-700: #205f9b;
-  --color-sky-800: #1c4e7d;
-  --color-sky-900: #1a4267;
+  /* Sky — light periwinkle blue, sampled at #B1CFF3 from client flyers. */
+  --color-sky-50: #f1f6fe;
+  --color-sky-100: #e1edfc;
+  --color-sky-200: #c7def9;
+  --color-sky-300: #b1cff3;
+  --color-sky-400: #8fb7ed;
+  --color-sky-500: #6b9de3;
+  --color-sky-600: #4a7fd1;
+  --color-sky-700: #3a66ac;
+  --color-sky-800: #2f5288;
+  --color-sky-900: #29456d;
 
   /* Neutral — cool, crisp gray-white. Reads clean and corporate, not warm/earthy. */
   --color-neutral-50: #f8fafc;

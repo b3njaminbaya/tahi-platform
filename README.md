@@ -60,7 +60,9 @@ src/
 
 ### Placeholder content
 
-The client has confirmed brand colors (royal blue + white, see below) but has not yet supplied a final logo, tagline, staff info, testimonials, service photography, email, or address. Every placeholder is marked one of two ways so it's never mistaken for a real fact:
+Most business content has now been confirmed from client-supplied marketing flyers (Tahi Homecare Limited, formerly 3D Medcare) — legal name, phone, email, location (Buruburu, Nairobi), hours (24/7), company description, mission, vision (derived from the mission), core values (distilled from recurring flyer themes), "why choose us" copy, and named services folded into each service category's subcategories.
+
+Still genuinely awaiting the client — nothing here is invented, and each is marked so it's never mistaken for a real fact:
 
 - Fields with `isPlaceholder: true` in the config files (rendered with a visible "coming soon" / dashed-border notice on the page — see `PlaceholderNotice` component)
 - Images: no stock photography is used as a stand-in. Anywhere real photography is missing, `ImagePlaceholder` renders a neutral icon graphic instead.
@@ -69,13 +71,12 @@ To replace a placeholder, update the relevant field in `src/config/` and flip it
 
 ### Brand colors / logo / fonts
 
-Confirmed brand colors: **royal blue** (primary) and **white**, with **gold** and **sky blue** as supporting variation colors. All design tokens live in `src/index.css` under the `@theme` block:
+Confirmed brand colors, pixel-sampled from the client's own flyers: **royal blue #002EA6** (primary) and **white**, with a **light periwinkle blue #B1CFF3** (`sky-*`) as the supporting variation color — the source material is two-tone with no third accent hue, so there is intentionally no separate "accent" token. All design tokens live in `src/index.css` under the `@theme` block:
 
 | Token | Role |
 |---|---|
-| `--color-primary-*` | Royal blue — buttons, links, active nav, headings accents |
-| `--color-accent-*` | Gold — secondary CTAs, badges, placeholder/notice highlights |
-| `--color-sky-*` | Light blue — soft badge fills, tonal backgrounds (e.g. the hero pill, image placeholders) |
+| `--color-primary-*` | Royal blue (#002EA6 = primary-600) — buttons, links, active nav, headings accents |
+| `--color-sky-*` | Light periwinkle blue (#B1CFF3 = sky-300) — secondary CTAs, badges, soft tonal fills |
 | `--color-neutral-*` | Cool gray/white — body background, text, borders |
 
 Edit the hex values there to adjust the palette further; every component reads these tokens rather than hardcoding colors. The favicon/logo mark is inline SVG in `public/favicon.svg` and duplicated inline in `Header.tsx`/`Footer.tsx`; swap those with the client's real logo file once supplied (replace the inline `<svg>` with an `<img>`).
@@ -89,7 +90,7 @@ All submission logic is isolated in `src/lib/submissionService.ts`. To connect a
 ## SEO
 
 - Per-page meta tags via the `Seo` component (`src/components/seo/Seo.tsx`)
-- Site-wide `MedicalBusiness` JSON-LD structured data (`OrganizationJsonLd`) — only includes facts that are actually known (name, URL, WhatsApp contact); no invented address, credentials, or ratings
+- Site-wide `MedicalBusiness` JSON-LD structured data (`OrganizationJsonLd`) — includes only confirmed facts (name, URL, WhatsApp/phone, email, neighborhood-level address); no invented ratings or credentials
 - `public/robots.txt` and `public/sitemap.xml` — update the sitemap if routes change
 - Canonical URLs point at `https://tahihomebasedcare.com`
 
@@ -100,6 +101,9 @@ Built to WCAG 2.2 AA where practical: semantic landmarks, visible focus rings ev
 ## Known gaps (by design, pending client input)
 
 - No live form backend (see above)
-- No confirmed logo, tagline, or company description
-- No real staff bios/photos, testimonials, service photography, business email, or physical address
-- No confirmed social media accounts
+- No confirmed logo or service/team photography
+- No real staff names, bios or photos
+- No genuine client testimonials
+- No confirmed social media URLs (the flyers name a Facebook page — "Tahi Homecare Limited" — but no link, so `config/social.ts` still points to `null` rather than guessing a URL)
+- No precise street address (only the neighborhood, Buruburu, has been confirmed)
+- Core values and vision were synthesized from recurring themes across the client's flyers rather than stated verbatim — worth a client sign-off pass

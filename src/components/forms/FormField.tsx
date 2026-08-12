@@ -23,7 +23,7 @@ export function FormField({ id, label, error, hint, required, children }: FormFi
       <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-neutral-800">
         {label}
         {required ? (
-          <span className="text-accent-600" aria-hidden="true">
+          <span className="text-error-600" aria-hidden="true">
             {" "}
             *
           </span>

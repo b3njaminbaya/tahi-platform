@@ -4,16 +4,28 @@ import { siteUrl } from "@/config/seo";
 
 /**
  * Site-wide structured data. Only includes facts we actually
- * know (name, url, WhatsApp contact) — no invented address,
- * email, ratings or credentials.
+ * know — no invented ratings, credentials, or precise street
+ * address (only the neighborhood the client has confirmed).
  */
 export function OrganizationJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     name: business.name,
+    legalName: business.legalName,
     url: siteUrl,
     image: `${siteUrl}/og-image.jpg`,
+    ...(business.email.value ? { email: business.email.value } : {}),
+    ...(business.address.line
+      ? {
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: business.address.line,
+            addressRegion: business.address.city,
+            addressCountry: "KE",
+          },
+        }
+      : {}),
     contactPoint: [
       {
         "@type": "ContactPoint",

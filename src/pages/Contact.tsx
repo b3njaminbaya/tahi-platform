@@ -34,28 +34,52 @@ export default function Contact() {
                   <p className="text-sm text-neutral-600">{business.whatsapp.displayNumber}</p>
                 </div>
               </li>
+              {business.phone.value ? (
+                <li className="flex items-start gap-3">
+                  <Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary-600" aria-hidden="true" />
+                  <div>
+                    <p className="font-semibold text-neutral-900">Phone</p>
+                    <p className="text-sm text-neutral-600">{business.phone.value}</p>
+                  </div>
+                </li>
+              ) : null}
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary-600" aria-hidden="true" />
                 <div>
                   <p className="font-semibold text-neutral-900">Email</p>
-                  <p className="text-sm italic text-neutral-400">Email address coming soon</p>
+                  {business.email.value ? (
+                    <a
+                      href={`mailto:${business.email.value}`}
+                      className="text-sm text-neutral-600 underline underline-offset-2 hover:text-primary-700"
+                    >
+                      {business.email.value}
+                    </a>
+                  ) : (
+                    <p className="text-sm italic text-neutral-400">Email address coming soon</p>
+                  )}
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary-600" aria-hidden="true" />
                 <div>
                   <p className="font-semibold text-neutral-900">Location</p>
-                  <p className="text-sm italic text-neutral-400">
-                    Serving clients in {business.address.city}, {business.address.country} — exact address details
-                    coming soon
-                  </p>
+                  {business.address.line ? (
+                    <p className="text-sm text-neutral-600">
+                      {business.address.line}, {business.address.city}, {business.address.country}
+                    </p>
+                  ) : (
+                    <p className="text-sm italic text-neutral-400">
+                      Serving clients in {business.address.city}, {business.address.country} — exact address details
+                      coming soon
+                    </p>
+                  )}
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary-600" aria-hidden="true" />
                 <div>
                   <p className="font-semibold text-neutral-900">Working Hours</p>
-                  <p className="text-sm italic text-neutral-400">Hours coming soon</p>
+                  <p className="text-sm text-neutral-600">{business.hours.summary}</p>
                 </div>
               </li>
             </ul>

@@ -69,17 +69,35 @@ export function Footer() {
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" aria-hidden="true" />
               <span>{business.whatsapp.displayNumber} (WhatsApp)</span>
             </li>
+            {business.phone.value ? (
+              <li className="flex items-start gap-2.5">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" aria-hidden="true" />
+                <span>{business.phone.value}</span>
+              </li>
+            ) : null}
             <li className="flex items-start gap-2.5">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" aria-hidden="true" />
-              <span className="italic text-neutral-400">Email coming soon</span>
+              {business.email.value ? (
+                <a href={`mailto:${business.email.value}`} className="hover:text-primary-700">
+                  {business.email.value}
+                </a>
+              ) : (
+                <span className="italic text-neutral-400">Email coming soon</span>
+              )}
             </li>
             <li className="flex items-start gap-2.5">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" aria-hidden="true" />
-              <span className="italic text-neutral-400">Location details coming soon</span>
+              {business.address.line ? (
+                <span>
+                  {business.address.line}, {business.address.city}
+                </span>
+              ) : (
+                <span className="italic text-neutral-400">Location details coming soon</span>
+              )}
             </li>
             <li className="flex items-start gap-2.5">
               <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" aria-hidden="true" />
-              <span className="italic text-neutral-400">Working hours coming soon</span>
+              <span>{business.hours.summary}</span>
             </li>
           </ul>
           <WhatsAppButton className="mt-5 w-full sm:w-auto" />

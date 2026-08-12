@@ -13,9 +13,17 @@
 
 export const business = {
   name: "Tahi Home-Based Care",
-  legalName: "Tahi Home-Based Care",
-  tagline: "PLACEHOLDER_TAGLINE",
-  taglineIsPlaceholder: true,
+  /** Registered entity name — used for footer copyright and legal pages only. */
+  legalName: "Tahi Homecare Limited",
+  /**
+   * Sourced from an older "3D Medcare" flyer (the company's previous
+   * name/branding) — carried over on the client's confirmation that
+   * all three source flyers reflect the current business accurately.
+   * Flag for the client to confirm or replace if they'd prefer a
+   * tagline written under the current name.
+   */
+  tagline: "Your health is our priority",
+  taglineIsPlaceholder: false,
   domain: "https://tahihomebasedcare.com",
 
   whatsapp: {
@@ -24,75 +32,93 @@ export const business = {
     displayNumber: "+254 117 995 229",
   },
 
-  email: {
-    value: null as string | null,
-    isPlaceholder: true,
+  /** General phone line(s), distinct from the WhatsApp number above. */
+  phone: {
+    value: "0791 227 353 / 0729 975 706" as string | null,
+    isPlaceholder: false,
   },
 
-  phone: {
-    value: null as string | null,
-    isPlaceholder: true,
+  email: {
+    value: "tahihomecare@gmail.com" as string | null,
+    isPlaceholder: false,
   },
 
   address: {
-    line: null as string | null,
+    line: "Buruburu" as string | null,
     city: "Nairobi",
     country: "Kenya",
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
 
   hours: {
-    summary: "PLACEHOLDER_HOURS",
-    isPlaceholder: true,
+    summary: "Available 24/7",
+    isPlaceholder: false,
   },
 
   description: {
     short:
-      "Tahi Home-Based Care brings professional, compassionate healthcare services directly to clients in the comfort of their own homes. [Company description awaiting client input.]",
-    isPlaceholder: true,
+      "Tahi Homecare Limited is a team of medics committed to addressing emergency health issues in the comfort of your home with just a phone call. We offer 24/7 home-based health support.",
+    isPlaceholder: false,
   },
 
+  /** Derived from the mission below — the client did not supply a separate vision statement. */
   vision: {
-    value: "PLACEHOLDER_VISION",
-    isPlaceholder: true,
+    value:
+      "A future where quality healthcare is never out of reach — where every family can access professional medical care from the comfort of home, any time it's needed.",
+    isPlaceholder: false,
   },
 
   mission: {
-    value: "PLACEHOLDER_MISSION",
-    isPlaceholder: true,
+    value:
+      "We bridge state-of-the-art clinical medicine directly to our patients, thus redefining accessibility and efficiency in healthcare.",
+    isPlaceholder: false,
   },
 
+  /** Distilled from recurring themes across the client's flyers (accessibility, compassion, hospital-level expertise, 24/7 availability) — not separately labeled "core values" in the source material. */
   coreValues: {
     items: [
-      { title: "PLACEHOLDER_VALUE_1", description: "PLACEHOLDER_VALUE_1_DESCRIPTION" },
-      { title: "PLACEHOLDER_VALUE_2", description: "PLACEHOLDER_VALUE_2_DESCRIPTION" },
-      { title: "PLACEHOLDER_VALUE_3", description: "PLACEHOLDER_VALUE_3_DESCRIPTION" },
-      { title: "PLACEHOLDER_VALUE_4", description: "PLACEHOLDER_VALUE_4_DESCRIPTION" },
+      {
+        title: "Accessibility",
+        description: "Bringing state-of-the-art clinical care directly to your door, wherever home is.",
+      },
+      {
+        title: "Compassion",
+        description: "Treating every client with warmth, dignity and personalized attention.",
+      },
+      {
+        title: "Expertise",
+        description: "Delivering the same standard of skill and care you'd expect from a hospital visit.",
+      },
+      {
+        title: "Availability",
+        description: "Ready around the clock — 24/7 home-based health support, every day of the week.",
+      },
     ],
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
 
+  /** Verbatim from the client's services flyer. */
   whyChooseUs: {
     items: [
       {
-        title: "Care where you're most comfortable",
+        title: "Comprehensive door-to-door care",
         description:
-          "Our team brings clinical support to your home, reducing the stress and disruption of hospital visits.",
+          "We offer comprehensive door-to-door services, ensuring patients receive high-quality medical attention in the comfort of their own homes.",
       },
       {
-        title: "A team-based approach",
+        title: "Hospital-level expertise at home",
         description:
-          "Services are coordinated across nursing, therapy and wellness disciplines so care stays consistent.",
+          "Our services cater to a wide range of medical needs, from routine check-ups and diagnostics to advanced treatments, all delivered with the same expertise and care as a hospital visit.",
       },
       {
-        title: "Responsive communication",
+        title: "Personalized, immediate care",
         description:
-          "Reach us directly by phone or WhatsApp to ask questions or arrange a visit at a time that works for you.",
+          "Our door-to-door visits not only provide convenience but also foster a more personalized and immediate healthcare experience.",
       },
       {
-        title: "Care built around the client",
+        title: "Door-to-door doctor access",
         description:
-          "Every service is arranged around individual needs and preferences rather than a fixed, one-size-fits-all plan.",
+          "We bridge state-of-the-art clinical medicine directly to our patients, thus redefining accessibility and efficiency in healthcare.",
       },
     ],
   },

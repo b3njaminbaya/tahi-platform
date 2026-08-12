@@ -5,26 +5,43 @@ import type { Service } from "@/types";
  * ------------------------------------------------------------
  * Add, remove or reorder services by editing this array only —
  * ServiceGrid, ServiceCard and the Services/Home pages all read
- * from here. Descriptions are intentionally general (no
- * statistics, certifications, or medical claims) until the
- * client supplies approved service copy. `image` is left
- * undefined until real photography is supplied; components fall
- * back to a neutral placeholder graphic rather than a stock
- * photo standing in as if it were real.
+ * from here. Subcategory names below are sourced from the
+ * client's own marketing flyers (Tahi Homecare Limited, formerly
+ * 3D Medcare); top-level names/descriptions stay general (no
+ * statistics, certifications, or medical claims) until the client
+ * supplies approved service copy. Counseling has no source
+ * material from the flyers — kept as a category per the original
+ * project brief, content still generic. `image` is left undefined
+ * until real photography is supplied; components fall back to a
+ * neutral placeholder graphic rather than a stock photo standing
+ * in as if it were real.
  */
 export const services: Service[] = [
   {
     slug: "nursing-care",
     name: "Nursing Care",
     shortDescription:
-      "Skilled nursing support at home, including monitoring, medication assistance and post-procedure care.",
+      "Skilled nursing support at home, including wound care, catheter care, injections and vital signs monitoring.",
     detailedDescription:
       "Our home nursing service is designed to support clients who need ongoing clinical attention without an extended hospital stay. A nurse can assist with day-to-day health monitoring, medication routines and recovery care in a familiar home environment.",
     subcategories: [
-      { name: "Medication management", description: "Support keeping track of prescribed medication schedules." },
-      { name: "Wound care", description: "Routine dressing changes and wound monitoring." },
-      { name: "Post-surgical care", description: "Recovery support following a hospital procedure." },
-      { name: "Vital signs monitoring", description: "Regular checks of blood pressure, temperature and pulse." },
+      {
+        name: "Wound care & dressing",
+        description: "Cleaning, dressing and monitoring of wounds, including suture and staple removal.",
+      },
+      { name: "Catheter & stoma care", description: "Ongoing catheter and stoma care support at home." },
+      {
+        name: "Injections & medication administration",
+        description: "Administering prescribed injections and coordinating medication, including pharmacy support.",
+      },
+      {
+        name: "Vital signs & health monitoring",
+        description: "Blood pressure and blood sugar checks, plus routine vital signs monitoring.",
+      },
+      {
+        name: "Nurse assistant / caregiver support",
+        description: "General caregiver support for day-to-day health needs.",
+      },
     ],
     imageAlt: "A home-based nurse providing care to a client — photo pending from client.",
   },
@@ -32,11 +49,15 @@ export const services: Service[] = [
     slug: "physiotherapy",
     name: "Physiotherapy",
     shortDescription:
-      "Mobility and rehabilitation support delivered at home to help clients regain strength and independence.",
+      "Mobility, occupational therapy and rehabilitation support delivered at home to help clients regain strength and independence.",
     detailedDescription:
       "Home-based physiotherapy sessions focus on movement, strength and rehabilitation goals set together with the client. Sessions take place in the client's own space, which can make ongoing rehabilitation more comfortable and consistent.",
     subcategories: [
       { name: "Mobility rehabilitation", description: "Exercises to help rebuild movement and coordination." },
+      {
+        name: "Occupational therapy",
+        description: "Support regaining skills needed for everyday activities and independence.",
+      },
       { name: "Post-injury recovery", description: "Structured support following an injury." },
       { name: "Strength and balance training", description: "Guided exercise to support independence at home." },
     ],
@@ -73,12 +94,13 @@ export const services: Service[] = [
     slug: "doctor-appointments",
     name: "Doctor Appointments",
     shortDescription:
-      "Coordination and support for home-based doctor consultations as part of an ongoing care plan.",
+      "Door-to-door doctor consultations and ambulance coordination as part of an ongoing home-based care plan.",
     detailedDescription:
-      "We help coordinate doctor consultations at home, making it easier for clients who have difficulty traveling to receive medical attention as part of a broader home-based care plan.",
+      "We bridge state-of-the-art clinical medicine directly to our patients — bringing doctor consultations to the home and redefining accessibility and efficiency in healthcare for clients who find it difficult to travel.",
     subcategories: [
-      { name: "Consultation coordination", description: "Scheduling and coordination support for home visits." },
+      { name: "Door-to-door doctor visits", description: "Scheduling and coordination support for home consultations." },
       { name: "Care plan follow-up", description: "Support following up on a physician's care instructions." },
+      { name: "Ambulance services", description: "Coordination of ambulance support when a home visit isn't sufficient." },
     ],
     imageAlt: "A doctor consultation taking place in a home setting — photo pending from client.",
   },
@@ -86,11 +108,13 @@ export const services: Service[] = [
     slug: "palliative-care",
     name: "Palliative Care",
     shortDescription:
-      "Compassionate comfort-focused support for clients managing serious or long-term illness.",
+      "Compassionate comfort-focused support for elderly clients and those managing serious illness or disability.",
     detailedDescription:
-      "Our palliative care service focuses on comfort, dignity and quality of life for clients living with serious or long-term illness, with support extended to family members throughout the process.",
+      "Our palliative care service focuses on comfort, dignity and quality of life for clients living with serious or long-term illness, elderly clients, and clients living with a disability — with support extended to family members throughout the process.",
     subcategories: [
       { name: "Comfort-focused care", description: "Support centered on comfort and quality of life." },
+      { name: "Elderly care", description: "Ongoing support for elderly clients managing day-to-day health and comfort needs." },
+      { name: "Disability care & support", description: "Support for clients living with a disability, tailored to individual needs." },
       { name: "Family support", description: "Guidance and support for family members providing care at home." },
     ],
     imageAlt: "A caregiver holding the hand of a client — photo pending from client.",

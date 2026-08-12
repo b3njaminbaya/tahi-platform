@@ -17,7 +17,7 @@ export function TeamCard({ member }: TeamCardProps) {
         <p className="mt-0.5 text-sm font-semibold text-primary-700">{member.position}</p>
         <p className="mt-3 text-sm leading-relaxed text-neutral-600">{member.bio}</p>
         {member.isPlaceholder ? (
-          <p className="mt-3 text-xs font-medium uppercase tracking-wide text-accent-600">
+          <p className="mt-3 text-xs font-medium uppercase tracking-wide text-neutral-500">
             Profile awaiting client details
           </p>
         ) : null}

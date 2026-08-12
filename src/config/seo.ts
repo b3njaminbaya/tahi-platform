@@ -4,21 +4,21 @@ export const siteUrl = "https://tahihomebasedcare.com";
 
 export const seoDefaults: Record<string, PageSeo> = {
   home: {
-    title: "Tahi Home-Based Care | Compassionate Home Healthcare in Kenya",
+    title: "Tahi Home-Based Care | Compassionate Home Healthcare in Nairobi, Kenya",
     description:
-      "Tahi Home-Based Care provides professional, compassionate home-based healthcare services including nursing care, physiotherapy, nutrition, laboratory services, doctor appointments, palliative care and counseling.",
+      "Tahi Home-Based Care (Tahi Homecare Limited) provides professional, compassionate home-based healthcare in Buruburu, Nairobi — nursing care, physiotherapy, nutrition, laboratory services, doctor appointments, palliative care and counseling, available 24/7.",
     path: "/",
   },
   services: {
     title: "Our Services | Tahi Home-Based Care",
     description:
-      "Explore Tahi Home-Based Care's healthcare services: nursing care, physiotherapy, nutrition, laboratory services, doctor appointments, palliative care and counseling — delivered at home.",
+      "Explore Tahi Home-Based Care's healthcare services: nursing care, physiotherapy, nutrition, laboratory services, doctor appointments, palliative care and counseling — delivered at home across Nairobi.",
     path: "/services",
   },
   about: {
     title: "About Us | Tahi Home-Based Care",
     description:
-      "Learn about Tahi Home-Based Care's approach to compassionate, professional home-based healthcare and the team behind it.",
+      "Learn about Tahi Homecare Limited's mission to bring hospital-level healthcare directly to your door in Nairobi, and the team behind it.",
     path: "/about",
   },
   testimonials: {
@@ -34,7 +34,8 @@ export const seoDefaults: Record<string, PageSeo> = {
   },
   contact: {
     title: "Contact Us | Tahi Home-Based Care",
-    description: "Get in touch with Tahi Home-Based Care by WhatsApp, phone, or our contact form.",
+    description:
+      "Get in touch with Tahi Home-Based Care in Buruburu, Nairobi — by WhatsApp, phone, email, or our contact form. Available 24/7.",
     path: "/contact",
   },
   terms: {
