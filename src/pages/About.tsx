@@ -1,9 +1,10 @@
-import { MapPinned, HeartHandshake, Award, Clock3 } from "lucide-react";
+import { Eye, Target, MapPinned, HeartHandshake, Award, Clock3 } from "lucide-react";
 import { Seo } from "@/components/seo/Seo";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { PlaceholderNotice } from "@/components/ui/PlaceholderNotice";
+import { IconBadge } from "@/components/ui/IconBadge";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { TeamCard } from "@/components/about/TeamCard";
 import { CTASection } from "@/components/ui/CTASection";
@@ -21,7 +22,7 @@ export default function About() {
         <Breadcrumbs items={[{ label: "Home", path: "/" }, { label: "About Us" }]} />
       </Container>
 
-      <section className="pb-16 pt-4 sm:pb-24">
+      <section className="bg-white pb-16 pt-4 sm:pb-24">
         <Container className="max-w-3xl">
           <SectionHeading eyebrow="About us" title="Who we are" />
           <p className="mt-5 text-base leading-relaxed text-neutral-600">{business.description.short}</p>
@@ -34,19 +35,21 @@ export default function About() {
         </Container>
       </section>
 
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-neutral-50 py-16 sm:py-24">
         <Container>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-            <div className="rounded-lg border border-neutral-200 p-8">
-              <h2 className="text-2xl">Our Vision</h2>
+            <div className="rounded-xl border border-neutral-200 bg-white p-8 shadow-card">
+              <IconBadge icon={Eye} />
+              <h2 className="mt-4 text-2xl">Our Vision</h2>
               {business.vision.isPlaceholder ? (
                 <PlaceholderNotice className="mt-3">Awaiting client-approved vision statement.</PlaceholderNotice>
               ) : (
                 <p className="mt-3 text-neutral-600">{business.vision.value}</p>
               )}
             </div>
-            <div className="rounded-lg border border-neutral-200 p-8">
-              <h2 className="text-2xl">Our Mission</h2>
+            <div className="rounded-xl border border-neutral-200 bg-white p-8 shadow-card">
+              <IconBadge icon={Target} tone="sky" />
+              <h2 className="mt-4 text-2xl">Our Mission</h2>
               <p className="mt-3 text-neutral-600">{business.mission.value}</p>
               {business.mission.isPlaceholder ? (
                 <PlaceholderNotice className="mt-5">Awaiting client-approved mission statement.</PlaceholderNotice>
@@ -56,15 +59,18 @@ export default function About() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="bg-white py-16 sm:py-24">
         <Container>
           <SectionHeading eyebrow="What we stand for" title="Our core values" />
           <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {business.coreValues.items.map((value, index) => {
               const Icon = coreValueIcons[index % coreValueIcons.length];
               return (
-                <div key={value.title} className="rounded-lg border border-neutral-200 bg-white p-6">
-                  <Icon className="h-6 w-6 text-primary-600" aria-hidden="true" />
+                <div
+                  key={value.title}
+                  className="group rounded-xl border border-neutral-200 bg-white p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-card-hover"
+                >
+                  <IconBadge icon={Icon} />
                   <h3 className="mt-4 text-lg">{value.title}</h3>
                   <p className="mt-2 text-sm text-neutral-600">{value.description}</p>
                 </div>
@@ -79,13 +85,15 @@ export default function About() {
         </Container>
       </section>
 
-      <div className="bg-white">
-        <WhyChooseUs />
-      </div>
+      <WhyChooseUs />
 
-      <section className="py-16 sm:py-24">
+      <section className="bg-white py-16 sm:py-24">
         <Container>
-          <SectionHeading eyebrow="Meet the team" title="Our team" description="Profiles below are placeholders until real staff information is supplied." />
+          <SectionHeading
+            eyebrow="Meet the team"
+            title="Our team"
+            description="Profiles below are placeholders until real staff information is supplied."
+          />
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((member) => (
               <TeamCard key={member.id} member={member} />

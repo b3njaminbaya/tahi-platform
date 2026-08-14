@@ -16,7 +16,7 @@ export default function Testimonials() {
         <Breadcrumbs items={[{ label: "Home", path: "/" }, { label: "Testimonials" }]} />
       </Container>
 
-      <section className="pb-16 pt-4 sm:pb-24">
+      <section className="bg-white pb-16 pt-4 sm:pb-24">
         <Container>
           <SectionHeading
             eyebrow="Testimonials"

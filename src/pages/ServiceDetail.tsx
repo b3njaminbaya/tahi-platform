@@ -1,5 +1,5 @@
 import { useParams, Navigate, Link } from "react-router-dom";
-import { CalendarCheck, CheckCircle2 } from "lucide-react";
+import { CalendarCheck, CheckCircle2, Clock3, MapPinned } from "lucide-react";
 import { Seo } from "@/components/seo/Seo";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -10,6 +10,7 @@ import { CTASection } from "@/components/ui/CTASection";
 import { getServiceBySlug, services } from "@/config/services";
 import { serviceIcons } from "@/lib/serviceIcons";
 import { whatsAppMessages } from "@/lib/whatsapp";
+import { business } from "@/config/business";
 
 export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -35,14 +36,25 @@ export default function ServiceDetail() {
         />
       </Container>
 
-      <section className="pb-16 pt-4 sm:pb-24">
+      <section className="bg-white pb-16 pt-4 sm:pb-24">
         <Container className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-xl shadow-card">
+          <div className="aspect-4/3 w-full overflow-hidden rounded-xl shadow-card">
             <ImagePlaceholder icon={Icon} label={service.imageAlt} className="h-full" />
           </div>
           <div>
             <h1 className="text-3xl sm:text-4xl">{service.name}</h1>
             <p className="mt-4 text-base leading-relaxed text-neutral-600">{service.detailedDescription}</p>
+
+            <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+              <li className="flex items-center gap-2 text-sm font-medium text-neutral-600">
+                <Clock3 className="h-4 w-4 text-primary-600" aria-hidden="true" />
+                {business.hours.summary}
+              </li>
+              <li className="flex items-center gap-2 text-sm font-medium text-neutral-600">
+                <MapPinned className="h-4 w-4 text-primary-600" aria-hidden="true" />
+                {business.address.line}, {business.address.city}
+              </li>
+            </ul>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -56,12 +68,17 @@ export default function ServiceDetail() {
             </div>
           </div>
         </Container>
+      </section>
 
-        <Container className="mt-14">
+      <section className="bg-neutral-50 py-16 sm:py-24">
+        <Container>
           <h2 className="text-2xl">What this can include</h2>
           <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {service.subcategories.map((sub) => (
-              <li key={sub.name} className="flex gap-3 rounded-lg border border-neutral-200 bg-white p-5">
+              <li
+                key={sub.name}
+                className="flex gap-3 rounded-xl border border-neutral-200 bg-white p-5 shadow-card transition-shadow hover:shadow-card-hover"
+              >
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary-600" aria-hidden="true" />
                 <div>
                   <p className="font-semibold text-neutral-900">{sub.name}</p>
@@ -70,25 +87,25 @@ export default function ServiceDetail() {
               </li>
             ))}
           </ul>
-        </Container>
 
-        {related.length ? (
-          <Container className="mt-16">
-            <h2 className="text-2xl">Related services</h2>
-            <ul className="mt-6 flex flex-wrap gap-3">
-              {related.map((r) => (
-                <li key={r.slug}>
-                  <Link
-                    to={`/services/${r.slug}`}
-                    className="inline-block rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-600 hover:text-primary-700"
-                  >
-                    {r.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Container>
-        ) : null}
+          {related.length ? (
+            <div className="mt-14">
+              <h2 className="text-2xl">Related services</h2>
+              <ul className="mt-6 flex flex-wrap gap-3">
+                {related.map((r) => (
+                  <li key={r.slug}>
+                    <Link
+                      to={`/services/${r.slug}`}
+                      className="inline-block rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-600 hover:text-primary-700"
+                    >
+                      {r.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </Container>
       </section>
 
       <CTASection />
